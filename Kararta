@@ -1,0 +1,10 @@
+getgenv().on = true 
+cam = workspace.CurrentCamera 
+local RunService = game:GetService("RunService")
+local RS = RunService.RenderStepped:Connect(function()
+    if getgenv().on == true  then
+        cam.FieldOfView = 120
+    else
+        RS:Disconnect()
+    end
+end)
